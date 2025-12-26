@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Up Game</title>
+
+<style>
+:root{
+  --bg:#0b0f1a; --card:#161c3a; --card2:#1c2452; --primary:#4f7cff;
+}
+*{box-sizing:border-box;font-family:system-ui,Arial}
+body{margin:0;background:linear-gradient(180deg,#0b0f1a,#0a1028);color:#fff}
+header{
+  position:sticky;top:0;z-index:10;display:flex;gap:12px;align-items:center;
+  padding:14px 16px;background:linear-gradient(90deg,#0f1535,#141c44)
+}
+header img{width:44px;height:44px;border-radius:14px}
+.header-text b{font-size:18px}
+.header-text span{font-size:13px;opacity:.8}
+.container{padding:16px;max-width:980px;margin:auto}
+.section-title{margin:18px 4px 10px;font-weight:800}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.game{
+  background:linear-gradient(180deg,var(--card),var(--card2));
+  border-radius:22px;padding:14px;text-align:center;cursor:pointer;
+  border:2px solid transparent;transition:.2s
+}
+.game:hover{transform:translateY(-4px)}
+.game.active{border-color:var(--primary);box-shadow:0 0 0 2px rgba(79,124,255,.25)}
+.game svg{width:100%;height:140px;border-radius:18px;margin-bottom:10px}
+.game div{font-weight:900}
+.form{
+  margin-top:22px;background:linear-gradient(180deg,var(--card),var(--card2));
+  padding:18px;border-radius:22px
+}
+label{font-size:14px;opacity:.9}
+input,select{
+  width:100%;padding:14px;margin:6px 0 14px;border:none;border-radius:14px;
+  background:#0b0f1a;color:#fff
+}
+.summary{
+  background:#0b0f1a;padding:14px;border-radius:14px;margin-bottom:14px;
+  font-size:14px;line-height:1.6;outline:1px dashed rgba(255,255,255,.12)
+}
+button{
+  width:100%;padding:15px;border:none;border-radius:16px;
+  background:linear-gradient(90deg,#4f7cff,#6f8cff);color:#fff;font-weight:900
+}
+.fullscreen{
+  position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(90deg,#4f7cff,#6f8cff);display:flex;align-items:center;
+  justify-content:center;font-size:22px;cursor:pointer
+}
+.footer{text-align:center;opacity:.6;font-size:13px;margin:30px 0}
+</style>
+</head>
+
+<body>
+<header>
+  <img src="https://dummyimage.com/200x200/4f7cff/ffffff&text=•B×T×R•">
+  <div class="header-text">
+    <b>Top Up Game</b>
+    <span>Admin •|~🄱×🅣×Ⓡ~|•</span>
+  </div>
+</header>
+
+<div class="container">
+<div class="section-title">Pilih Game</div>
+
+<div class="games">
+
+<!-- FREE FIRE (detail) -->
+<div class="game" data-game="Free Fire">
+<svg viewBox="0 0 320 180">
+  <defs>
+    <linearGradient id="ff_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff6b00"/>
+    </linearGradient>
+    <radialGradient id="ff_glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="180" rx="26" fill="url(#ff_bg)"/>
+  <rect width="320" height="180" rx="26" fill="url(#ff_glow)"/>
+  <polygon points="160,40 200,100 160,140 120,100" fill="#fff" opacity=".9"/>
+  <circle cx="70" cy="50" r="16" fill="#ffd166"/>
+  <circle cx="250" cy="130" r="10" fill="#ffd166"/>
+  <text x="160" y="112" font-size="36" text-anchor="middle">🔥</text>
+</svg>
+<div>Free Fire</div>
+</div>
+
+<!-- MOBILE LEGENDS (detail) -->
+<div class="game" data-game="Mobile Legends">
+<svg viewBox="0 0 320 180">
+  <defs>
+    <linearGradient id="ml_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+    <radialGradient id="ml_glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="180" rx="26" fill="url(#ml_bg)"/>
+  <rect width="320" height="180" rx="26" fill="url(#ml_glow)"/>
+  <path d="M160 40 L200 70 L180 120 L160 140 L140 120 L120 70 Z" fill="#fff"/>
+  <circle cx="80" cy="120" r="10" fill="#bde0fe"/>
+  <circle cx="240" cy="60" r="12" fill="#bde0fe"/>
+  <text x="160" y="108" font-size="34" text-anchor="middle">⚔️</text>
+</svg>
+<div>Mobile Legends</div>
+</div>
+
+<!-- PUBG (detail) -->
+<div class="game" data-game="PUBG Mobile">
+<svg viewBox="0 0 320 180">
+  <defs>
+    <linearGradient id="pg_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#43e97b"/>
+      <stop offset="100%" stop-color="#38f9d7"/>
+    </linearGradient>
+    <radialGradient id="pg_glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="180" rx="26" fill="url(#pg_bg)"/>
+  <rect width="320" height="180" rx="26" fill="url(#pg_glow)"/>
+  <rect x="120" y="50" width="80" height="80" rx="14" fill="#fff"/>
+  <line x1="160" y1="50" x2="160" y2="130" stroke="#0b0f1a" stroke-width="6"/>
+  <circle cx="90" cy="90" r="10" fill="#d8f3dc"/>
+  <circle cx="230" cy="120" r="12" fill="#d8f3dc"/>
+  <text x="160" y="112" font-size="30" text-anchor="middle">🎯</text>
+</svg>
+<div>PUBG Mobile</div>
+</div>
+
+<!-- ROBLOX (detail) -->
+<div class="game" data-game="Roblox">
+<svg viewBox="0 0 320 180">
+  <defs>
+    <linearGradient id="rb_bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6a6a"/>
+      <stop offset="100%" stop-color="#ff4757"/>
+    </linearGradient>
+    <radialGradient id="rb_glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="100%" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="180" rx="26" fill="url(#rb_bg)"/>
+  <rect width="320" height="180" rx="26" fill="url(#rb_glow)"/>
+  <rect x="130" y="60" width="60" height="60" rx="6" fill="#fff"/>
+  <rect x="145" y="75" width="30" height="30" rx="4" fill="#ff4757"/>
+  <circle cx="80" cy="60" r="10" fill="#ffd6d6"/>
+  <circle cx="240" cy="130" r="12" fill="#ffd6d6"/>
+  <text x="160" y="112" font-size="30" text-anchor="middle">🧊</text>
+</svg>
+<div>Roblox</div>
+</div>
+
+</div>
+
+<div class="form">
+  <label>User ID / Server</label>
+  <input id="userid">
+  <label>Nominal</label>
+  <select id="nominal"></select>
+  <label>Metode Pembayaran</label>
+  <select id="pay">
+    <option value="">-- Pilih --</option>
+    <option>Dana</option><option>OVO</option><option>GoPay</option><option>Transfer Bank</option>
+  </select>
+  <div class="summary" id="summary">Belum ada pesanan</div>
+  <button onclick="kirimWA()">BUY</button>
+</div>
+
+<div class="footer">top-up•game•murah</div>
+</div>
+
+<div class="fullscreen" onclick="toggleFull()">⛶</div>
+
+<script>
+const hargaGame={
+  "Free Fire":{"50 Diamonds":"Rp8.000","100 Diamonds":"Rp15.000"},
+  "Mobile Legends":{"86 Diamonds":"Rp20.000","172 Diamonds":"Rp38.000"},
+  "PUBG Mobile":{"60 UC":"Rp15.000","325 UC":"Rp75.000"},
+  "Roblox":{"80 Robux":"Rp18.000","400 Robux":"Rp85.000"}
+};
+let selectedGame="";
+const userid=document.getElementById("userid");
+const nominal=document.getElementById("nominal");
+const pay=document.getElementById("pay");
+
+document.querySelectorAll(".game").forEach(g=>{
+  g.onclick=()=>{
+    document.querySelectorAll(".game").forEach(x=>x.classList.remove("active"));
+    g.classList.add("active"); selectedGame=g.dataset.game;
+    nominal.innerHTML="<option value=''>-- Pilih --</option>";
+    for(const n in hargaGame[selectedGame]) nominal.innerHTML+=`<option>${n}</option>`;
+    updateSummary();
+  };
+});
+userid.oninput=updateSummary; nominal.onchange=updateSummary; pay.onchange=updateSummary;
+
+function updateSummary(){
+  if(!selectedGame){summary.innerHTML="Belum ada pesanan";return;}
+  summary.innerHTML=`<b>Ringkasan</b><br>
+  Game: ${selectedGame}<br>ID: ${userid.value||"-"}<br>
+  Nominal: ${nominal.value||"-"}<br>
+  Harga: ${nominal.value?hargaGame[selectedGame][nominal.value]:"-"}<br>
+  Pembayaran: ${pay.value||"-"}`;
+}
+function kirimWA(){
+  if(!selectedGame||!userid.value||!nominal.value||!pay.value){alert("Lengkapi data!");return;}
+  const admin="6283157261072";
+  const pesan=`TOP UP GAME
+Admin: •|~🄱×🅣×Ⓡ~|•
+Game: ${selectedGame}
+ID: ${userid.value}
+Nominal: ${nominal.value}
+Harga: ${hargaGame[selectedGame][nominal.value]}
+Pembayaran: ${pay.value}`;
+  window.open(`https://wa.me/${admin}?text=${encodeURIComponent(pesan)}`);
+}
+function toggleFull(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+</script>
+</body>
+</html>
